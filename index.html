@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Killed by Bending Spoons</title>
+<meta name="description" content="A ledger of every company Bending Spoons acquired: what it paid, who it cut, what users pay now. Sourced line by line.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><rect x='18' y='46' width='64' height='8' fill='%23e5484d'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="shell">
+    <h1>Killed by<br>Bending&nbsp;Spoons</h1>
+    <dl class="topline" id="topline"></dl>
+  </div>
+</header>
+
+<section class="band" id="acquirer">
+  <div class="shell">
+    <h2 class="band-title">The acquirer</h2>
+    <p class="band-lede">
+      A Milan company that buys mature software with paying users. It listed on Nasdaq
+      in July 2026. Every figure below is from its own filings or from Wikipedia.
+    </p>
+    <dl class="facts facts-inline" id="company-facts"></dl>
+  </div>
+</section>
+
+<section class="band band-tight" id="ledger">
+  <div class="shell">
+    <div class="ledger-head">
+      <h2 class="band-title">The portfolio</h2>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search" autocomplete="off" aria-label="Search the ledger">
+        <div class="segmented" role="group" aria-label="Filter">
+          <button class="seg is-on" data-filter="all">All</button>
+          <button class="seg" data-filter="layoffs">Layoffs</button>
+          <button class="seg" data-filter="price">Price rises</button>
+          <button class="seg" data-filter="shutdown">Shut down</button>
+          <button class="seg" data-filter="none">Not reported</button>
+        </div>
+        <select id="sort" aria-label="Sort">
+          <option value="new">Most recent</option>
+          <option value="old">Oldest</option>
+          <option value="cut">Deepest cuts</option>
+          <option value="price">Largest price paid</option>
+          <option value="az">Alphabetical</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="rows" class="grid"></div>
+    <p id="empty" class="empty" hidden>No matches.</p>
+  </div>
+</section>
+
+<section class="band" id="prices">
+  <div class="shell">
+    <h2 class="band-title">What renewal looks like</h2>
+    <p class="band-lede">
+      Every documented before-and-after bill in the portfolio, largest rise first. These
+      are named customers quoted in reporting, not list prices.
+    </p>
+    <ol id="hike-board" class="board"></ol>
+  </div>
+</section>
+
+<section class="band" id="built">
+  <div class="shell">
+    <h2 class="band-title">Built, not bought</h2>
+    <p class="band-lede">
+      Does the company make anything of its own? Yes, and almost all of it predates the
+      acquisitions. Remini, its largest earner, was bought in 2021, not built.
+    </p>
+    <div id="built-list" class="built-grid"></div>
+  </div>
+</section>
+
+<section class="band band-quiet" id="standard">
+  <div class="shell">
+    <h2 class="band-title">The evidence standard</h2>
+    <div class="standard-grid">
+      <div>
+        <h3>Every figure is linked</h3>
+        <p>Each number carries its own source, not a shared bibliography. Open any acquisition and check the one you doubt.</p>
+      </div>
+      <div>
+        <h3>Nothing is extrapolated</h3>
+        <p>Five companies have no outcome reporting at all. Their pages say so. The group-wide pattern is never applied to a company that lacks coverage of its own.</p>
+      </div>
+      <div>
+        <h3>Disagreements are shown</h3>
+        <p>komoot's cuts are reported at 75% by Follow the Money and about 85% by DC Rainmaker. Both appear. Splice's provenance is contested and labelled.</p>
+      </div>
+      <div>
+        <h3>No scores, no estimates</h3>
+        <p>This page carries no rating of its own. Every label (layoffs reported, price rise reported, shut down) is switched on by a sourced figure and by nothing else. Where reporting is silent, the entry says so.</p>
+      </div>
+    </div>
+    <dl class="scale" id="scale">
+      <div><dt>Shut down</dt><dd>The product is no longer available.</dd></div>
+      <div><dt>Layoffs reported</dt><dd>A named outlet published a headcount figure.</dd></div>
+      <div><dt>Price rise reported</dt><dd>A named outlet published a before-and-after bill.</dd></div>
+      <div><dt>Pricing changed</dt><dd>A documented model or tier change, without a percentage.</dd></div>
+      <div><dt>No outcome reported</dt><dd>The acquisition is confirmed; nothing else has been published.</dd></div>
+    </dl>
+    <p class="fineprint">
+      Descriptions of what happened are drawn from the linked reporting. Characterisations
+      are the author's opinion, offered as commentary on the facts shown and not as
+      statements of fact. Bending Spoons' own responses are quoted where they exist.
+      Corrections with a source will be applied. Every entry is one object in
+      <code>data.js</code>.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <p class="foot-lede">
+      Reporting by Bloomberg, TechCrunch, Follow the Money, The Pragmatic Engineer,
+      Fortune, TechRadar, TVBEurope, Streaming Media, BikeRadar, DC Rainmaker, road.cc,
+      Cycling Weekly, Meetup, Bending Spoons' SEC Form F-1 and Wikipedia.
+    </p>
+    <p>
+      Not affiliated with Bending Spoons S.p.A. Where the company has defended these
+      changes on the record, that defence appears on its page.
+      Inspired by <a href="https://killedbygoogle.com" rel="noopener">Killed by Google</a>.
+    </p>
+    <p class="foot-small">Corrections: every entry is one object in <code>data.js</code>.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
