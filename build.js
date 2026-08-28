@@ -166,6 +166,7 @@ function page(item, prev, next) {
 <footer>
   <div class="shell">
     <p>Not affiliated with Bending Spoons S.p.A. <a href="../index.html">Back to all ${SPOONS.length} acquisitions</a>.</p>
+    <p>Something wrong on this page? It is one object in <code>data.js</code>. Corrections with a source are welcome: <a href="https://github.com/nuclearconditioning/killedbybendingspoons" rel="noopener">github.com/nuclearconditioning/killedbybendingspoons</a>.</p>
   </div>
 </footer>
 

@@ -6,7 +6,7 @@ what was reported about the staff, and what changed for the people paying for it
 Every figure links to the reporting it came from. The site carries no score, rating or
 estimate of its own.
 
-Live: <!-- add your URL after first deploy -->
+**<https://nuclearconditioning.github.io/killedbybendingspoons/>**
 
 ## Evidence standard
 
@@ -38,11 +38,46 @@ No dependencies, no build tooling, no framework. Open `index.html` in a browser.
 2. Run `node build.js` to regenerate the pages in `p/`.
 3. Open `index.html` and check it.
 
-## Corrections
+## Contributing
 
-Corrections are welcome and will be applied when they come with a source. Open an issue
-or a pull request with a link to the reporting. Claims without a source will not be
-added, including ones that would make the picture look worse.
+Contributions are welcome. The bar is simple: **every claim needs a source**.
+
+### What is most useful
+
+1. **Corrections.** A wrong figure, date or price. Link the reporting that shows it.
+2. **Filling the gaps.** Five entries carry a *No outcome reported* notice: Splice,
+   Alight Motion, Issuu, MileIQ and Eventbrite. If you can source layoff numbers or
+   pricing changes for any of them, that is the highest-value contribution here.
+3. **New acquisitions.** Bending Spoons keeps buying. Add the entry when it closes.
+4. **The company's side.** If Bending Spoons or an acquired company has responded on
+   the record, that response belongs on the page. Public replies are as welcome as
+   critical reporting.
+5. **Translations and accessibility fixes.**
+
+### What will be turned down
+
+- Claims with no source, however plausible, including ones that make the picture worse.
+- Reddit threads, tweets or forum posts standing alone as the sole source for a fact.
+  They are fine as evidence that users reacted, attributed as such.
+- Scores, ratings or estimates. The site deliberately has none.
+- Loaded language in place of the reported figure. The numbers do the work.
+
+### How to add or change an entry
+
+1. Fork, then edit the entry object in `data.js`. Add your source to the `S` map at the
+   top of the file and reference it by key, so it can be reused.
+2. Put the figure in `facts` (with its own source), not only in the prose.
+3. Run `node build.js` to regenerate `p/`.
+4. Open `index.html` and check the card and the detail page.
+5. Commit both `data.js` and the regenerated `p/*.html`, and open a pull request.
+
+A pull request that changes prose but leaves `facts` and its source untouched will be
+asked for the source before merging. That is not bureaucracy: the corrections policy is
+the only thing that makes the site worth trusting.
+
+### Reporting a problem without a pull request
+
+Open an issue with the entry name, what is wrong, and a link. That is enough.
 
 ## Licence
 
